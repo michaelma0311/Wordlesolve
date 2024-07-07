@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>Wordle Solver</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="..\static\wordlesolve.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+
+    
+
+    <div id="greeninput" style="margin: 20px;">
+      <form action="{{ url_for('process_form1') }}" method="POST">
+        <p class="ginput-label">Please enter the letters that are green. Box should contain one letter or be left blank</p>
+        <div class="ginput-row">
+          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t1" size="1">
+          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t2" size="1">
+          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t3" size="1">
+          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t4" size="1">
+          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t5" size="1">
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    
+    <div id="orangeinput" style="margin: 20px;">
+      <form action="/url2" method="POST">
+        <p class="ginput-label">Please enter the letters that are orange. If more than one character contains same box, enter the characters separated by a space</p>
+        <div class="oinput-row">
+          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o1" size="2">
+          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o2" size="2">
+          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o3" size="2">
+          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o4" size="2">
+          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o5" size="2">
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    
+    <div id="grinput" style="margin: 20px;">
+      <form action="/url3" method="POST">
+        <p class="grinput-label">Please enter the words that you have put in separated by a space</p>
+        <div class="grinput-row">
+          <input type="text" style="height: 35px" name="gr1" size="40">
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <div id = "subm" style = "margin:20px;">
+      <form action="/run" method = "POST">
+        <p class="submi">When you are done entering all three of the categories and submitted all of them, please press this final submit button</p>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <div id="reset-button" style="margin: 20px;">
+      <div class="labels">
+        <label>Press this button to clear form</label>
+        <button type="button" onclick="resetForm()">Reset Form</button>
+      </div>
+      <div class="labels">
+        <label>Press this button to clear past history and restart completely</label>
+        <form action="/reset" method="POST">
+          <button type="submit">Add another submission</button>
+        </form>
+      </div>
+    </div>
+
+
+    <script>
+      function resetForm() {
+        // Get all the form elements
+        var formElements = document.querySelectorAll('form input[type="text"]');
+      
+        // Clear the value of each form element
+        formElements.forEach(function (element) {
+          element.value = '';
+        });
+      }
+      </script>
+  </body>
+</html>
