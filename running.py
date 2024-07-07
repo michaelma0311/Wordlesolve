@@ -22,7 +22,7 @@ app = Flask(__name__, static_folder='static')
 """
 @app.route('/')
 def home():
-    return render_template('wordlesolve.html')
+    return render_template('index.html')
 lis = []
 @app.route('/url1', methods=['POST', 'GET'])
 def process_form1():
