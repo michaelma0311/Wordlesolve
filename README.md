@@ -47,8 +47,6 @@ This is a self-made project that helps solves the popular New York Times game "W
 
 <h4>Here is the end result, where we can see the website solved it correctly.</h4>
 
-<br></br>
-
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/user-attachments/assets/5f5b81e1-efd0-49b4-9e5f-eed38f722e8b" width=45%; style="object-fit: contain;" />
   <img src="https://github.com/user-attachments/assets/306a4f4b-9b39-4a4b-8d7f-f7de176b6580" width=45%; style="object-fit: contain;" />
