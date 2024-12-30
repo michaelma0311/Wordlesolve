@@ -30,8 +30,8 @@ This is the main page of the website
 Here is an example of it solving a wordle, where you can just input all your information.
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/user-attachments/assets/cea79afc-232d-40a6-8857-675e9c208bf6" />
-  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" height="300" />
+  <img src="https://github.com/user-attachments/assets/cea79afc-232d-40a6-8857-675e9c208bf6" style="object-fit: contain;" />
+  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" height="300" style="object-fit: contain;" />
 </div>
 
 
