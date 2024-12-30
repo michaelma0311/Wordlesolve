@@ -21,12 +21,16 @@ This is a self-made project that helps solves the popular New York Times game "W
 1. **Python 3.13 or higher**
 2. **Flask**
 
-![image](https://github.com/user-attachments/assets/9cfe727b-f3ad-4e7b-a2a2-207cc49e08a0)
+## Project Images
+Here are some images showcasing the project:
 
-<h1 float="left">
-  <img src="https://github.com/user-attachments/assets/cea79afc-232d-40a6-8857-675e9c208bf6" width="500" />
-  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" width="500" length="20000" /> 
-</h1>
+
+![image](https://github.com/user-attachments/assets/9cfe727b-f3ad-4e7b-a2a2-207cc49e08a0)
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/user-attachments/assets/cea79afc-232d-40a6-8857-675e9c208bf6" width="45%" />
+  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" width="45%" />
+</div>
+
 
 
 
