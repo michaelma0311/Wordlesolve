@@ -30,12 +30,19 @@ This is the main page of the website
 Here is an example of it solving a wordle, where you can just input all your information.
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/user-attachments/assets/cea79afc-232d-40a6-8857-675e9c208bf6" style="object-fit: contain;" />
-  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" height="300" style="object-fit: contain;" />
+  <img src="https://github.com/user-attachments/assets/57331104-d6d6-46ef-b107-bf1d75f4198c" style="object-fit: contain;" />
+  <img src="https://github.com/user-attachments/assets/98fb482d-2451-4c9a-9c9d-2ae031a5a898" height="300" style="object-fit: contain;" />
 </div>
 
 
 
 
-![image](https://github.com/user-attachments/assets/458d5786-bea9-418a-8225-142fb7103be5) &nbsp; ![image](https://github.com/user-attachments/assets/60137192-72b9-4b93-8588-2d30fa1f07f7)
+![image](https://github.com/user-attachments/assets/5f5b81e1-efd0-49b4-9e5f-eed38f722e8b) &nbsp; ![image](https://github.com/user-attachments/assets/306a4f4b-9b39-4a4b-8d7f-f7de176b6580)
+
+
+
+
+
+
+
 
