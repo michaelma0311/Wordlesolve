@@ -30,7 +30,8 @@ This is a self-made project that helps solves the popular New York Times game "W
 ![image](https://github.com/user-attachments/assets/9cfe727b-f3ad-4e7b-a2a2-207cc49e08a0)
 
 
-
+<br></br>
+<br></br>
 <h4>Here is an example of all the information being inputted into the website.</h4>
 
 
