@@ -31,7 +31,7 @@ This is a self-made project that helps solves the popular New York Times game "W
 
 
 
-Here is an example of all the information being inputted into the website.
+<h4>Here is an example of all the information being inputted into the website.</h4>
 
 
 
@@ -43,7 +43,7 @@ Here is an example of all the information being inputted into the website.
 
 
 
-Here is the end result, where we can see the website solved it correctly.
+<h4>Here is the end result, where we can see the website solved it correctly.</h4>
 
 
 
