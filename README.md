@@ -23,7 +23,7 @@ This is a self-made project that helps solves the popular New York Times game "W
 
 ## Project Images
 
-This is the main page of the website
+<h1>This is the main page of the website</h1>
 
 
 
