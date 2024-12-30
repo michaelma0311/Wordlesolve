@@ -23,11 +23,10 @@ This is a self-made project that helps solves the popular New York Times game "W
 
 ![image](https://github.com/user-attachments/assets/9cfe727b-f3ad-4e7b-a2a2-207cc49e08a0)
 
-<p float="left">
-  <img src="https://github.com/user-attachments/assets/458d5786-bea9-418a-8225-142fb7103be5" width="100" />
-  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" width="100" /> 
-</p>
-![image](https://github.com/user-attachments/assets/458d5786-bea9-418a-8225-142fb7103be5)  ![image](https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f)
+<h1 float="left">
+  <img src="https://github.com/user-attachments/assets/458d5786-bea9-418a-8225-142fb7103be5" width="500" />
+  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" width="500" /> 
+</h1>
 
 
 
