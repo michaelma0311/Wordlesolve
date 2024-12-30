@@ -31,7 +31,7 @@ Here is an example of it solving a wordle, where you can just input all your inf
 
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/user-attachments/assets/57331104-d6d6-46ef-b107-bf1d75f4198c" style="object-fit: contain;" />
-  <img src="https://github.com/user-attachments/assets/98fb482d-2451-4c9a-9c9d-2ae031a5a898" height="300" style="object-fit: contain;" />
+  <img src="https://github.com/user-attachments/assets/98fb482d-2451-4c9a-9c9d-2ae031a5a898"  style="object-fit: contain;" />
 </div>
 
 
