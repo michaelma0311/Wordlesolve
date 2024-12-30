@@ -1,28 +1,12 @@
+#Michael Ma Wordle Solver
 from flask import Flask, request, render_template
 
 app = Flask(__name__, static_folder='static')
 
-# Define your Python function here
-"""def process_inputs(lis):
-    # Do something with the input values
-    # Call your Python function here
-    t1 = lis[0]
-    t2 = lis[1]
-    t3 = lis[2]
-    t4 = lis[3]
-    t5 = lis[5]
-    o1 = lis[6]
-    o2 = lis[7]
-    o3 = lis[8]
-    o4 = lis[9]
-    o5 = lis[10]
-    gr1 = lis[11]
-    #result = my_function(t1, t2, t3, t4, t5, o1, o2, o3, o4, o5, gr1)
-    return "Done"
-"""
+#Linking the flask function routes to index.html, actual python code starts on line 55
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('wordlesolve.html')
 lis = []
 @app.route('/url1', methods=['POST', 'GET'])
 def process_form1():
@@ -34,7 +18,7 @@ def process_form1():
         t4 = request.form.get('t4')
         t5 = request.form.get('t5')
         lis += [t1, t2, t3, t4, t5]
-        return "<h1>Sucess, please go back to the previous page by hitting the back arrow key to continue<\h1>"
+        return "<h1>Sucess, please go back to the previous page by hitting the back arrow key to continue</h1>"
     else:
         return 'Invalid request'
 @app.route('/url2', methods=['GET', 'POST'])
@@ -52,7 +36,7 @@ def process_form2():
         o5 = request.form.get('o5')
         o5 = o5.split()
         lis += [o1, o2, o3, o4, o5]
-        return "<h1>Sucess, please go back to the previous page by hitting the back arrow key to continue<\h1>"
+        return "<h1>Success, please go back to the previous page by hitting the back arrow key to continue</h1>"
         
     else:
         return 'Invalid request'
@@ -64,12 +48,12 @@ def process_form3():
         gr1 = request.form.get('gr1')
         gr1 = gr1.split()
         lis += [gr1]
-        return "<h1>Sucess, please go back to the previous page by hitting the back arrow key to continue<\h1>"
+        return "<h1>Sucess, please go back to the previous page by hitting the back arrow key to continue</h1>"
     else:
         return 'Invalid request'
 @app.route('/run', methods=['GET', 'POST'])
 
-def run():
+def run(): #Actual python code starts here
     try:
         global lis
         fin = open('wordlelist.txt', 'r')
@@ -100,16 +84,11 @@ def run():
             for j in word:
                 if j not in lett:
                     gray += [j]
-
-        #gray = input("Gray characters seperated by space: ").lower().split()
         ins = []
         for i in range(len(greens)):
             if greens[i] != '':
                 ins += [i]
         gray = list(set(gray))
-        #for i in wordspl:
-        #if (i != t1 and i != t2 and i != t3 and i != t4 and i != t4 and i != t5 and i not in org):
-                #gray += [i]
         ans = []
         for i in d:
             cur = list(map(str, i))
@@ -121,14 +100,12 @@ def run():
                         break
             if (able == False):
                 continue
-            #print(cur, ins)
             temp = []
             for k in range(len(cur)):
                 if k not in ins:
                     temp += [cur[k]]
                 else:
                     temp += ['']
-            #print("HIHIHI", temp, ins)
             for j in range(len(org)):
                 for k in range(len(org[j])):
                     if able == False:
@@ -146,16 +123,13 @@ def run():
                             able = False
             if able == False:
                 continue
-            #print(cur)
-            #print(gray)
-            #print("ADAD")
             for j in gray:
                 if cur.count(j) > 0:
                     able = False
             if able == False:
                 continue
             ans += [i]
-        words_per_line = 12  # Number of words to display per line
+        words_per_line = 12  
 
         result = "<h1>These are the words that are possible:"
         for i, word in enumerate(ans):
@@ -166,12 +140,12 @@ def run():
         return result
     except:
         afa = "You have entered something incorrectly or left blank spaces in the third submit box please try again"
-        return f"<h1>{afa}<\h1>"
+        return f"<h1>{afa}</h1>"
 
 @app.route('/reset', methods=['POST'])
 def reset_form():
     global lis
-    lis = []  # Reset the lis variable to an empty list
+    lis = [] 
     return '<h1>Form reset successful, please go back to the previous page'
 if __name__ == '__main__':
     app.run(debug = False)
