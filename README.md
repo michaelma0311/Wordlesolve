@@ -10,7 +10,7 @@ This is a self-made project that helps solves the popular New York Times game "W
   2. Incorrect letters (gray).
   3. Letters that are present in the word but in the wrong position (yellow).
 - Displays possible valid words as the result.
-- A reset form button as well as a new form button
+- A reset form button as well as a new form button.
 
 ## Technologies Used
 - Python 3.13
