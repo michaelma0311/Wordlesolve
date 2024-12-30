@@ -25,7 +25,7 @@ This is a self-made project that helps solves the popular New York Times game "W
 
 <h1 float="left">
   <img src="https://github.com/user-attachments/assets/cea79afc-232d-40a6-8857-675e9c208bf6" width="500" />
-  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" width="500" length="2000" /> 
+  <img src="https://github.com/user-attachments/assets/e16774e7-8fcf-4685-9129-c661d09f5f6f" width="500" length="20000" /> 
 </h1>
 
 
