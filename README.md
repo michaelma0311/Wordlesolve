@@ -35,18 +35,19 @@ This is a self-made project that helps solves the popular New York Times game "W
 <h4>Here is an example of all the information being inputted into the website.</h4>
 
 
-
+<br></br>
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/user-attachments/assets/98fb482d-2451-4c9a-9c9d-2ae031a5a898" width=45%; style="object-fit: contain;" />
   <img src="https://github.com/user-attachments/assets/57331104-d6d6-46ef-b107-bf1d75f4198c" width=45%; style="object-fit: contain;" />
 </div>
 
-
+<br></br>
+<br></br>
 
 
 <h4>Here is the end result, where we can see the website solved it correctly.</h4>
 
-
+<br></br>
 
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/user-attachments/assets/5f5b81e1-efd0-49b4-9e5f-eed38f722e8b" width=45%; style="object-fit: contain;" />
