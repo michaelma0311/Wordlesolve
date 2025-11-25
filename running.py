@@ -59,7 +59,7 @@ def run(): #Actual python code starts here
         fin = open('wordlelist.txt', 'r')
 
         d = fin.read().split()
-
+        print(lis)
         t1 = lis[0]
         t2 = lis[1]
         t3 = lis[2]
@@ -80,6 +80,7 @@ def run(): #Actual python code starts here
         org = [z1, z2, z3, z4, z5]
         gray = []
         words = lis[10]
+        print(greens)
         for word in words:
             for j in word:
                 if j not in lett:
@@ -91,6 +92,7 @@ def run(): #Actual python code starts here
         gray = list(set(gray))
         ans = []
         for i in d:
+            print(i)
             cur = list(map(str, i))
             able = True
             for j in range(5):
@@ -106,6 +108,7 @@ def run(): #Actual python code starts here
                     temp += [cur[k]]
                 else:
                     temp += ['']
+            #print(temp, cur, greens, org)
             for j in range(len(org)):
                 for k in range(len(org[j])):
                     if able == False:
@@ -113,11 +116,12 @@ def run(): #Actual python code starts here
                     if org[j][k] == '':
                         continue
                     if org[j][k] in greens:
-                        if (temp.count(org[j][k]) != 0):
-                            if temp.index(org[j][k]) != j and cur.index(j) != greens.index(j):
+                        """if (temp.count(org[j][k]) != 0):
+                            if temp.index(org[j][k]) != j and temp.index(org[j][k]) != greens.index(org[j][k]):
                                 pass
                         else:
-                            able = False
+                            able = False"""
+                        continue
                     else:
                         if temp.count(org[j][k]) == 0 or temp.index(org[j][k]) == j:
                             able = False
@@ -129,8 +133,8 @@ def run(): #Actual python code starts here
             if able == False:
                 continue
             ans += [i]
+        #print("HELLO")
         words_per_line = 12  
-
         result = "<h1>These are the words that are possible:"
         for i, word in enumerate(ans):
             result += f"<h3>{word}</h3>"
