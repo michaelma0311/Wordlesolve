@@ -39,13 +39,12 @@ UPDATED LINK 👉 [https://wordlesolve.onrender.com](https://wordlesolve.onrende
 <h4>Here is an example of all the information being inputted into the website.</h4>
 
 
-<br></br>
-<div style="display: flex; justify-content: space-between;">
-  <img width="1041" height="967" alt="image" src="https://github.com/user-attachments/assets/c9d0c221-1114-4fc0-938e-375ad515b884" />
-
-  <img width="1429" height="1053" alt="image" src="https://github.com/user-attachments/assets/77801eb8-fcec-4ddd-b6e9-f670593298b5" />
-
-</div>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/c9d0c221-1114-4fc0-938e-375ad515b884" width="450"></td>
+    <td><img src="https://github.com/user-attachments/assets/77801eb8-fcec-4ddd-b6e9-f670593298b5" width="450"></td>
+  </tr>
+</table>
 
 <br></br>
 <br></br>
@@ -53,12 +52,12 @@ UPDATED LINK 👉 [https://wordlesolve.onrender.com](https://wordlesolve.onrende
 
 <h4>Here is the end result, where we can see the website solved it correctly.</h4>
 
-<div style="display: flex; justify-content: space-between;">
-  <img width="300" height="700" alt="image" src="https://github.com/user-attachments/assets/5988c1d9-c1f3-4d10-aebb-b37b71eaaacd" />
-
-  <img width="300" height="660" alt="image" src="https://github.com/user-attachments/assets/d44ad35c-37d2-4502-89ed-1286567ca1c0" />
-
-</div>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/5988c1d9-c1f3-4d10-aebb-b37b71eaaacd" width="300"></td>
+    <td><img src="https://github.com/user-attachments/assets/d44ad35c-37d2-4502-89ed-1286567ca1c0" width="300"></td>
+  </tr>
+</table>
 
 
 
