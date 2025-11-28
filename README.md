@@ -29,7 +29,9 @@ UPDATED LINK 👉 [https://wordlesolve.onrender.com](https://wordlesolve.onrende
 
 
 
-![image](https://github.com/user-attachments/assets/9cfe727b-f3ad-4e7b-a2a2-207cc49e08a0)
+
+<img width="1909" height="1048" alt="image" src="https://github.com/user-attachments/assets/5b8c2804-e481-48e3-9cc9-5b09c62435e4" />
+
 
 
 <br></br>
