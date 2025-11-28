@@ -54,9 +54,9 @@ UPDATED LINK 👉 [https://wordlesolve.onrender.com](https://wordlesolve.onrende
 <h4>Here is the end result, where we can see the website solved it correctly.</h4>
 
 <div style="display: flex; justify-content: space-between;">
-  <img width="593" height="1003" alt="image" src="https://github.com/user-attachments/assets/5988c1d9-c1f3-4d10-aebb-b37b71eaaacd" />
+  <img width="300" height="700" alt="image" src="https://github.com/user-attachments/assets/5988c1d9-c1f3-4d10-aebb-b37b71eaaacd" />
 
-  <img width="933" height="660" alt="image" src="https://github.com/user-attachments/assets/d44ad35c-37d2-4502-89ed-1286567ca1c0" />
+  <img width="300" height="660" alt="image" src="https://github.com/user-attachments/assets/d44ad35c-37d2-4502-89ed-1286567ca1c0" />
 
 </div>
 
