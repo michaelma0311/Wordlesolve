@@ -7,80 +7,34 @@ app = Flask(__name__, static_folder='static')
 @app.route('/')
 def home():
     return render_template('wordlesolve.html')
-lis = []
-@app.route('/url1', methods=['POST', 'GET'])
-def process_form1():
-    global lis
-    if request.method == 'POST':
-        t1 = request.form.get('t1')
-        t2 = request.form.get('t2')
-        t3 = request.form.get('t3')
-        t4 = request.form.get('t4')
-        t5 = request.form.get('t5')
-        lis += [t1, t2, t3, t4, t5]
-        return "<h1>Sucess, please go back to the previous page by hitting the back arrow key to continue</h1>"
-    else:
-        return 'Invalid request'
-@app.route('/url2', methods=['GET', 'POST'])
-def process_form2():
-    global lis
-    if request.method == 'POST':
-        o1 = request.form.get('o1')
-        o1 = o1.split()
-        o2 = request.form.get('o2')
-        o2 = o2.split()
-        o3 = request.form.get('o3')
-        o3 = o3.split()
-        o4 = request.form.get('o4')
-        o4 = o4.split()
-        o5 = request.form.get('o5')
-        o5 = o5.split()
-        lis += [o1, o2, o3, o4, o5]
-        return "<h1>Success, please go back to the previous page by hitting the back arrow key to continue</h1>"
-        
-    else:
-        return 'Invalid request'
 
-@app.route('/url3', methods=['GET', 'POST'])
-def process_form3():
-    global lis
-    if request.method == 'POST':
-        gr1 = request.form.get('gr1')
-        gr1 = gr1.split()
-        lis += [gr1]
-        return "<h1>Sucess, please go back to the previous page by hitting the back arrow key to continue</h1>"
-    else:
-        return 'Invalid request'
+def _clean_letter(value):
+    return (value or '').strip().lower()[:1]
+
+def _letter_bucket(value):
+    bucket = []
+    for ch in (value or '').lower():
+        if ch.isalpha():
+            bucket.append(ch)
+    return bucket
+
+def _parse_guesses(value):
+    return [(word.strip().lower()) for word in (value or '').split() if word.strip()]
+
 @app.route('/run', methods=['GET', 'POST'])
-
 def run(): #Actual python code starts here
     try:
-        global lis
         fin = open('wordlelist.txt', 'r')
 
         d = fin.read().split()
-        print(lis)
-        t1 = lis[0]
-        t2 = lis[1]
-        t3 = lis[2]
-        t4 = lis[3]
-        t5 = lis[4]
-        greens = [t1, t2, t3, t4, t5]
-        z1 = lis[5]
-        z2 = lis[6]
-        z3 = lis[7]
-        z4 = lis[8]
-        z5 = lis[9]
-        lett = [t1, t2, t3, t4, t5]
-        lett += z1
-        lett += z2
-        lett += z3
-        lett += z4
-        lett += z5
-        org = [z1, z2, z3, z4, z5]
+        greens = [_clean_letter(request.form.get(f't{i}')) for i in range(1, 6)]
+        oranges = [_letter_bucket(request.form.get(f'o{i}')) for i in range(1, 6)]
+        words = _parse_guesses(request.form.get('gr1'))
+        lett = [g for g in greens if g]
+        for bucket in oranges:
+            lett += bucket
+        org = oranges
         gray = []
-        words = lis[10]
-        print(greens)
         for word in words:
             for j in word:
                 if j not in lett:
@@ -142,15 +96,14 @@ def run(): #Actual python code starts here
                 result += "<br>"
 
         return result
-    except:
-        afa = "You have entered something incorrectly or left blank spaces in the third submit box please try again"
+    except Exception as exc:
+        print(exc)
+        afa = "Something went wrong. Please double-check your clues and try again."
         return f"<h1>{afa}</h1>"
 
 @app.route('/reset', methods=['POST'])
 def reset_form():
-    global lis
-    lis = [] 
-    return '<h1>Form reset successful, please go back to the previous page'
+    return '<h1>Form reset successful. Start a new submission whenever you like.</h1>'
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
 

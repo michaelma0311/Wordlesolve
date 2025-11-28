@@ -9,59 +9,60 @@
 
     
 
-    <div id="greeninput" style="margin: 20px;">
-      <form action="{{ url_for('process_form1') }}" method="POST">
-        <p class="ginput-label">Please enter the letters that are green. Box should contain one letter or be left blank</p>
-        <div class="ginput-row">
-          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t1" size="1">
-          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t2" size="1">
-          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t3" size="1">
-          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t4" size="1">
-          <input type="text" style="height:35px; width:35px; padding: 5px; text-align: center; font-size:25px;" name="t5" size="1">
+    <div id="solver-panel" class="dark-form">
+      <form id="solver-form" action="{{ url_for('run') }}" method="POST" data-response="results">
+        <div class="form-section">
+          <p class="ginput-label">Enter the single green letter for each position (leave blank if none).</p>
+          <div class="ginput-row">
+            <input type="text" class="letter-input green-letter" name="t1" maxlength="1" inputmode="text" autocomplete="off" pattern="[A-Za-z]">
+            <input type="text" class="letter-input green-letter" name="t2" maxlength="1" inputmode="text" autocomplete="off" pattern="[A-Za-z]">
+            <input type="text" class="letter-input green-letter" name="t3" maxlength="1" inputmode="text" autocomplete="off" pattern="[A-Za-z]">
+            <input type="text" class="letter-input green-letter" name="t4" maxlength="1" inputmode="text" autocomplete="off" pattern="[A-Za-z]">
+            <input type="text" class="letter-input green-letter" name="t5" maxlength="1" inputmode="text" autocomplete="off" pattern="[A-Za-z]">
+          </div>
         </div>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-    
-    <div id="orangeinput" style="margin: 20px;">
-      <form action="/url2" method="POST">
-        <p class="ginput-label">Please enter the letters that are orange. If more than one character contains same box, enter the characters separated by a space</p>
-        <div class="oinput-row">
-          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o1" size="2">
-          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o2" size="2">
-          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o3" size="2">
-          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o4" size="2">
-          <input type="text" style="height:35px; width:50px; padding: 5px; text-align: center;" name="o5" size="2">
+
+        <div class="form-section">
+          <p class="ginput-label">Enter the orange letters for each position. Use spaces if multiple letters belong in the same slot.</p>
+          <div class="oinput-row">
+            <input type="text" class="letter-input orange-field" name="o1" inputmode="text" autocomplete="off">
+            <input type="text" class="letter-input orange-field" name="o2" inputmode="text" autocomplete="off">
+            <input type="text" class="letter-input orange-field" name="o3" inputmode="text" autocomplete="off">
+            <input type="text" class="letter-input orange-field" name="o4" inputmode="text" autocomplete="off">
+            <input type="text" class="letter-input orange-field" name="o5" inputmode="text" autocomplete="off">
+          </div>
         </div>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-    
-    <div id="grinput" style="margin: 20px;">
-      <form action="/url3" method="POST">
-        <p class="grinput-label">Please enter the words that you have put in separated by a space</p>
-        <div class="grinput-row">
-          <input type="text" style="height: 35px" name="gr1" size="40">
+
+        <div class="form-section">
+          <p class="grinput-label">Please enter the words you have guessed so far separated by spaces.</p>
+          <div class="grinput-row">
+            <input type="text" name="gr1" class="wide-input" autocomplete="off" placeholder="crane slice adieu">
+          </div>
         </div>
-        <input type="submit" value="Submit">
+
+        <input type="submit" value="Solve">
       </form>
     </div>
 
-    <div id = "subm" style = "margin:20px;">
-      <form action="/run" method = "POST">
-        <p class="submi">When you are done entering all three of the categories and submitted all of them, please press this final submit button</p>
-        <input type="submit" value="Submit">
-      </form>
+    <div id="feedback" class="panel">
+      <div class="panel-section">
+        <h2>Captured Info</h2>
+        <div id="status-message"></div>
+      </div>
+      <div class="panel-section">
+        <h2>Solver Results</h2>
+        <div id="results"></div>
+      </div>
     </div>
 
-    <div id="reset-button" style="margin: 20px;">
+    <div id="reset-button" class="panel">
       <div class="labels">
         <label>Press this button to clear form</label>
         <button type="button" onclick="resetForm()">Reset Form</button>
       </div>
       <div class="labels">
         <label>Press this button to clear past history and restart completely</label>
-        <form action="/reset" method="POST">
+        <form id="reset-form" action="{{ url_for('reset_form') }}" method="POST" data-response="status" data-clear-results="true">
           <button type="submit">Add another submission</button>
         </form>
       </div>
@@ -70,14 +71,108 @@
 
     <script>
       function resetForm() {
-        // Get all the form elements
-        var formElements = document.querySelectorAll('form input[type="text"]');
-      
-        // Clear the value of each form element
-        formElements.forEach(function (element) {
+        var solverForm = document.getElementById('solver-form');
+        if (solverForm) {
+          solverForm.reset();
+        }
+        var textInputs = document.querySelectorAll('form input[type="text"]');
+        textInputs.forEach(function (element) {
           element.value = '';
         });
+        var statusBox = document.getElementById('status-message');
+        var resultsBox = document.getElementById('results');
+        if (statusBox) {
+          statusBox.innerHTML = '';
+        }
+        if (resultsBox) {
+          resultsBox.innerHTML = '';
+        }
       }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var statusBox = document.getElementById('status-message');
+        var resultsBox = document.getElementById('results');
+
+        function updateBox(target, content) {
+          if (target) {
+            target.innerHTML = content;
+          }
+        }
+
+        function formatLine(label, value) {
+          return '<p><strong>' + label + ':</strong> ' + value + '</p>';
+        }
+
+        function summarizeSubmission(formData) {
+          var greens = [];
+          var oranges = [];
+          for (var i = 1; i <= 5; i++) {
+            greens.push((formData.get('t' + i) || '').toUpperCase());
+            oranges.push((formData.get('o' + i) || '').toUpperCase());
+          }
+          var greensLine = greens.map(function (v) { return v || '_'; }).join(' ');
+          var orangesLine = oranges.map(function (v) {
+            var trimmed = v.trim();
+            return trimmed ? trimmed : '_';
+          }).join(' | ');
+          var guesses = (formData.get('gr1') || '').trim();
+          return formatLine('Greens', greensLine) +
+                 formatLine('Oranges', orangesLine) +
+                 formatLine('Guesses', guesses || 'None');
+        }
+
+        document.querySelectorAll('.green-letter').forEach(function (input) {
+          input.addEventListener('input', function () {
+            var value = input.value.replace(/[^a-zA-Z]/g, '').slice(0, 1);
+            input.value = value.toUpperCase();
+          });
+        });
+
+        document.querySelectorAll('.orange-field').forEach(function (input) {
+          input.addEventListener('input', function () {
+            var value = input.value.replace(/[^a-zA-Z\s]/g, '').toUpperCase();
+            input.value = value;
+          });
+        });
+
+        document.querySelectorAll('form[data-response]').forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var target = form.dataset.response === 'results' ? resultsBox : statusBox;
+            var clearResults = form.dataset.clearResults === 'true' && resultsBox && target !== resultsBox;
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+              method: form.method || 'POST',
+              body: formData
+            })
+              .then(function (response) {
+                return response.text().then(function (text) {
+                  if (!response.ok) {
+                    throw new Error(text || 'Request failed');
+                  }
+                  return text;
+                });
+              })
+              .then(function (text) {
+                updateBox(target, text);
+                if (clearResults && resultsBox) {
+                  resultsBox.innerHTML = '';
+                }
+                if (form.id === 'solver-form' && statusBox) {
+                  statusBox.innerHTML = summarizeSubmission(formData);
+                }
+              })
+              .catch(function (error) {
+                var message = '<p>Something went wrong: ' + error.message + '</p>';
+                updateBox(target, message);
+                if (form.id === 'solver-form' && statusBox) {
+                  statusBox.innerHTML = message;
+                }
+              });
+          });
+        });
+      });
       </script>
   </body>
 </html>

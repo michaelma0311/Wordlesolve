@@ -19,7 +19,7 @@ py-config {
   py-box:not(:defined) {
     display: none;
   }
-  html {
+html {
     font-family:
       ui-sans-serif,
       system-ui,
@@ -36,6 +36,7 @@ py-config {
       "Segoe UI Symbol",
       "Noto Color Emoji";
     line-height: 1.5;
+    background-color: #030711;
   }
   .spinner::after {
     content: "";
@@ -179,6 +180,7 @@ py-config {
     background-color: transparent;
     background-image: none;
     -webkit-appearance: button;
+    appearance: button;
     text-transform: none;
     font-family: inherit;
     font-size: 100%;
@@ -317,23 +319,21 @@ py-config {
   .ginput-row {
     display: flex;
     justify-content: center;
-    
+    gap: 10px;
+    width: 100%;
   }
   
   .ginput-row input {
-    margin-right: 10px;
-    background: #90EE90
-    
-
+    background: #90EE90;
   }
   .oinput-row {
     display: flex;
     justify-content: center;
-    
+    gap: 10px;
+    width: 100%;
   }
   
   .oinput-row input {
-    margin-right: 10px;
     background: #FFA500;
   }
   .oinput-label {
@@ -365,6 +365,166 @@ py-config {
     text-align: center;
     margin-bottom: 10px;
   }
-  body  {
-    background-color: #FBEEAC;
+
+  .labels button {
+    display: block;
+    margin: 12px auto 0;
+  }
+body  {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #e2e8f0;
+    background:
+      radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.18), rgba(0, 0, 0, 0) 40%),
+      radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0) 35%),
+      linear-gradient(180deg, #03040c 0%, #050c1d 50%, #020409 100%);
+    background-attachment: fixed;
+  }
+
+body, input, button, textarea {
+    color: #f8fafc;
+    font-size: 1rem;
+  }
+
+.letter-input {
+    width: 55px;
+    height: 55px;
+    padding: 6px;
+    text-align: center;
+    font-size: 1.35rem;
+    text-transform: uppercase;
+  }
+
+.orange-field {
+    width: 90px;
+    height: 55px;
+    padding: 6px 10px;
+    letter-spacing: 0.05em;
+  }
+
+.panel {
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    padding: 24px;
+    border-radius: 16px;
+    background: rgba(8, 18, 40, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 15px 45px rgba(2, 6, 23, 0.55);
+    backdrop-filter: blur(8px);
+  }
+
+.panel h2 {
+    text-align: center;
+    margin-top: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a5b4fc;
+  }
+
+.dark-form {
+    max-width: 700px;
+    margin: 0 auto 24px auto;
+    padding: 24px;
+    border-radius: 18px;
+    background: rgba(10, 15, 30, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+  }
+
+.dark-form input[type="text"] {
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background-color: rgba(15, 23, 42, 0.9);
+    color: #f8fafc;
+    box-shadow: inset 0 0 15px rgba(2, 6, 23, 0.7);
+  }
+
+.dark-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+.form-section {
+    width: 100%;
+  }
+
+.form-section + .form-section {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+.dark-form input[type="submit"],
+.dark-form button,
+#reset-button button {
+    margin-top: 16px;
+    padding: 10px 26px;
+    border-radius: 999px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: linear-gradient(120deg, #6366f1, #c084fc);
+    color: #0f172a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.dark-form input[type="submit"]:hover,
+.dark-form button:hover,
+#reset-button button:hover {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+  }
+
+.ginput-label,
+.grinput-label,
+.submi,
+.labels label {
+    color: #cbd5f5;
+  }
+
+#feedback {
+    margin-top: 40px;
+  }
+
+#status-message,
+#results {
+    min-height: 32px;
+    text-align: center;
+  }
+
+.wide-input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: rgba(15, 23, 42, 0.9);
+    color: #f8fafc;
+    font-size: 1rem;
+  }
+
+.panel-section + .panel-section {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(148, 163, 184, 0.35);
+  }
+
+#status-message h1,
+#results h1,
+#results h3 {
+    color: #f1f5f9;
+  }
+
+#reset-form {
+    display: flex;
+    justify-content: center;
   }
