@@ -41,8 +41,10 @@ UPDATED LINK 👉 [https://wordlesolve.onrender.com](https://wordlesolve.onrende
 
 <br></br>
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/user-attachments/assets/98fb482d-2451-4c9a-9c9d-2ae031a5a898" width=45%; style="object-fit: contain;" />
-  <img src="https://github.com/user-attachments/assets/57331104-d6d6-46ef-b107-bf1d75f4198c" width=45%; style="object-fit: contain;" />
+  <img width="1041" height="967" alt="image" src="https://github.com/user-attachments/assets/c9d0c221-1114-4fc0-938e-375ad515b884" />
+
+  <img width="1429" height="1053" alt="image" src="https://github.com/user-attachments/assets/77801eb8-fcec-4ddd-b6e9-f670593298b5" />
+
 </div>
 
 <br></br>
@@ -52,8 +54,10 @@ UPDATED LINK 👉 [https://wordlesolve.onrender.com](https://wordlesolve.onrende
 <h4>Here is the end result, where we can see the website solved it correctly.</h4>
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/user-attachments/assets/5f5b81e1-efd0-49b4-9e5f-eed38f722e8b" width=45%; style="object-fit: contain;" />
-  <img src="https://github.com/user-attachments/assets/306a4f4b-9b39-4a4b-8d7f-f7de176b6580" width=45%; style="object-fit: contain;" />
+  <img width="593" height="1003" alt="image" src="https://github.com/user-attachments/assets/5988c1d9-c1f3-4d10-aebb-b37b71eaaacd" />
+
+  <img width="933" height="660" alt="image" src="https://github.com/user-attachments/assets/d44ad35c-37d2-4502-89ed-1286567ca1c0" />
+
 </div>
 
 
